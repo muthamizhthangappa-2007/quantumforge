@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuantumForge | Learn Beyond Limits</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#dashboard">
+      <span class="brand-icon">Q</span>
+      <span>Quantum<span class="brand-accent">Forge</span>
+        <small>LEARN BEYOND LIMITS</small>
+      </span>
+    </a>
+
+    <p class="nav-label">WORKSPACE</p>
+    <nav>
+      <button class="nav-btn active" data-page="dashboard">⌂ <span>Dashboard</span></button>
+      <button class="nav-btn" data-page="learn">▤ <span>My Learning</span></button>
+      <button class="nav-btn" data-page="quantum">◈ <span>Quantum Lab</span></button>
+      <button class="nav-btn" data-page="skills">⌘ <span>Skill Studio</span></button>
+      <button class="nav-btn" data-page="library">▧ <span>Resource Library</span></button>
+      <button class="nav-btn" data-page="assistant">✳ <span>AI Companion</span></button>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="streak-mini">
+        <span class="streak-icon">🔥</span>
+        <div><strong id="sideStreak">1 day streak</strong><small>Keep showing up!</small></div>
+      </div>
+      <button class="nav-btn" data-page="settings">⚙ <span>Settings</span></button>
+      <div class="profile">
+        <div class="avatar">S</div>
+        <div><strong id="profileName">Student</strong><small>Learner account</small></div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">YOUR PERSONAL LEARNING SPACE</p>
+        <h2 id="pageTitle">Dashboard</h2>
+      </div>
+      <div class="top-actions">
+        <span class="date-pill" id="todayDate"></span>
+        <button class="icon-btn" id="voiceBtn" title="Voice assistance">🎙</button>
+        <button class="primary-btn small" id="headerStart">Continue learning ↗</button>
+      </div>
+    </header>
+
+    <section class="page active" id="dashboard">
+      <div class="welcome-banner">
+        <div class="welcome-copy">
+          <span class="tag light-tag">✦ YOUR JOURNEY, YOUR PACE</span>
+          <h1 id="welcomeTitle">Small steps.<br><em>Extraordinary futures.</em></h1>
+          <p>Learn something meaningful today. Your future self will thank you.</p>
+          <button class="dark-btn" data-goto="learn">Explore learning paths ↗</button>
+        </div>
+        <div class="welcome-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="art-core">Q<span>✦</span></div>
+          <div class="art-dot dot-one"></div>
+          <div class="art-dot dot-two"></div>
+          <div class="art-dot dot-three"></div>
+          <div class="art-caption">CURIOUS MINDS<br>BUILD THE FUTURE</div>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <article class="stat-card">
+          <span class="stat-icon sage">◷</span>
+          <p>Learning time</p><h2 id="hoursStat">0 min</h2>
+          <small>This session</small>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon peach">✓</span>
+          <p>Completed lessons</p><h2 id="completedStat">0</h2>
+          <small>Your progress is saved</small>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon lavender">🔥</span>
+          <p>Learning streak</p><h2 id="streakStat">1 day</h2>
+          <small>Build a daily habit</small>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon yellow">✧</span>
+          <p>Skill points</p><h2 id="pointsStat">0 XP</h2>
+          <small>Earned by completing lessons</small>
+        </article>
+      </div>
+
+      <div class="content-grid">
+        <section class="panel">
+          <div class="section-heading">
+            <div><p class="eyebrow">PICK UP WHERE YOU LEFT OFF</p><h2>Continue learning</h2></div>
+            <button class="text-btn" data-goto="learn">View all ↗</button>
+          </div>
+          <article class="course-card">
+            <div class="course-art art-quantum"><span>⟡</span><small>01 / EXPLORE</small></div>
+            <div class="course-info">
+              <span class="course-type">QUANTUM COMPUTING</span>
+              <h3>Quantum concepts, made simple</h3>
+              <p>Discover qubits, superposition and the future of computation.</p>
+              <div class="progress-track"><span id="quantumProgress"></span></div>
+              <div class="course-footer"><small id="quantumProgressText">0% completed</small><button class="primary-btn small" data-goto="quantum">Open lesson ↗</button></div>
+            </div>
+          </article>
+          <article class="course-card second-course">
+            <div class="course-art art-python"><span>⌘</span><small>02 / CREATE</small></div>
+            <div class="course-info">
+              <span class="course-type">PROGRAMMING</span>
+              <h3>Build your Python foundation</h3>
+              <p>Practise logic, variables and beginner-friendly coding.</p>
+              <div class="progress-track"><span id="pythonProgress"></span></div>
+              <div class="course-footer"><small id="pythonProgressText">0% completed</small><button class="outline-btn small" data-goto="skills">Practise ↗</button></div>
+            </div>
+          </article>
+        </section>
+
+        <section class="panel right-panel">
+          <div class="section-heading"><div><p class="eyebrow">YOUR DAILY MOMENT</p><h2>Today's focus</h2></div><span class="sparkle">✳</span></div>
+          <div class="focus-card">
+            <div class="focus-number">01</div>
+            <h3>Consistency beats intensity.</h3>
+            <p>Spend just 15 focused minutes learning something new. Small actions compound into real skills.</p>
+            <button class="dark-btn full" data-goto="learn">Start a focus session ↗</button>
+          </div>
+          <div class="daily-task">
+            <div class="task-check">✓</div><div><strong>Daily learning goal</strong><small id="goalText">Complete one lesson today</small></div>
+          </div>
+          <div class="mini-progress"><div><span>Weekly progress</span><strong id="weeklyText">0 / 5 lessons</strong></div><div class="progress-track"><span id="weeklyProgress"></span></div></div>
+          <button class="text-btn full-text" data-goto="assistant">Need help? Ask your AI companion ↗</button>
+        </section>
+      </div>
+    </section>
+
+    <section class="page" id="learn">
+      <div class="page-intro"><span class="tag">YOUR LEARNING PATH</span><h1>Learn at your own pace.</h1><p>Choose a topic, explore a lesson and track your progress as you go.</p></div>
+      <div class="filter-row">
+        <input id="courseSearch" type="search" placeholder="Search courses and topics...">
+        <select id="categoryFilter"><option value="all">All categories</option><option value="Quantum">Quantum</option><option value="Programming">Programming</option><option value="AI">Artificial Intelligence</option><option value="Career">Career Skills</option></select>
+      </div>
+      <div class="course-grid" id="courseGrid"></div>
+    </section>
+
+    <section class="page" id="quantum">
+      <div class="page-intro"><span class="tag">INTERACTIVE LEARNING LAB</span><h1>Enter the quantum world.</h1><p>Experiment with a simplified one-qubit circuit and see how quantum gates affect its state.</p></div>
+      <div class="lab-grid">
+        <div class="panel">
+          <p class="eyebrow">YOUR CIRCUIT</p><h2>Build a simple circuit</h2>
+          <p class="muted">Start with |0⟩, then apply a gate to change the qubit state.</p>
+          <div class="circuit"><div class="wire-label">|0⟩</div><div class="wire"></div><div id="gateBox" class="gate-box">I</div><div class="wire"></div><div class="wire-end">→</div></div>
+          <label class="field-label" for="gateSelect">Choose a quantum gate</label>
+          <select id="gateSelect"><option value="I">I — Identity</option><option value="X">X — Bit flip</option><option value="H">H — Hadamard</option><option value="Z">Z — Phase flip</option></select>
+          <button class="primary-btn full" id="runCircuit">Run circuit ↗</button>
+          <div class="result-box" id="quantumResult"><span class="result-icon">◈</span><div><strong>Ready to experiment</strong><p>Choose a gate and run your circuit.</p></div></div>
+          <button class="outline-btn full" id="resetCircuit">Reset circuit</button>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">UNDERSTAND THE OUTPUT</p><h2>Measurement probabilities</h2>
+          <p class="muted">Illustrative probabilities for the selected ideal one-qubit state.</p>
+          <div class="prob-row"><div><span>Probability of |0⟩</span><strong id="probZeroText">100%</strong></div><div class="progress-track"><span id="probZero" style="width:100%"></span></div></div>
+          <div class="prob-row"><div><span>Probability of |1⟩</span><strong id="probOneText">0%</strong></div><div class="progress-track"><span id="probOne" style="width:0%"></span></div></div>
+          <div class="quantum-note"><strong>Did you know?</strong><p>A qubit can be in a superposition of basis states. A measurement returns a classical result with probabilities determined by its quantum state.</p></div>
+          <button class="primary-btn full" id="completeQuantum">Mark quantum lesson complete ✓</button>
+        </div>
+      </div>
+      <p class="footnote">Educational simulation only. This page does not execute a real Qiskit quantum circuit or connect to quantum hardware.</p>
+    </section>
+
+    <section class="page" id="skills">
+      <div class="page-intro"><span class="tag">PRACTISE BY DOING</span><h1>Your skill studio.</h1><p>Build practical skills with small activities and immediate feedback.</p></div>
+      <div class="skills-grid">
+        <article class="panel skill-card"><span class="big-icon sage">⌘</span><span class="course-type">PROGRAMMING</span><h2>Python quick challenge</h2><p>Which Python command displays text on the screen?</p>
+          <div class="quiz-options"><label><input type="radio" name="pythonQuiz" value="A"> <code>echo("Hello")</code></label><label><input type="radio" name="pythonQuiz" value="B"> <code>print("Hello")</code></label><label><input type="radio" name="pythonQuiz" value="C"> <code>show("Hello")</code></label></div>
+          <button class="primary-btn full" id="checkQuiz">Check answer</button><p id="quizFeedback" class="feedback"></p>
+        </article>
+        <article class="panel skill-card"><span class="big-icon peach">✦</span><span class="course-type">SELF DEVELOPMENT</span><h2>Focus timer</h2><p>Take a focused learning break. Choose 5 or 15 minutes.</p>
+          <div class="timer-display" id="timerDisplay">05:00</div>
+          <div class="timer-controls"><button class="outline-btn" data-minutes="5">5 min</button><button class="outline-btn" data-minutes="15">15 min</button></div>
+          <div class="timer-controls"><button class="primary-btn" id="timerStart">Start</button><button class="outline-btn" id="timerReset">Reset</button></div>
+          <p class="muted small-note">Keep this tab open while the timer runs.</p>
+        </article>
+        <article class="panel skill-card"><span class="big-icon lavender">◎</span><span class="course-type">PROGRESS TRACKER</span><h2>Your learning milestones</h2><div class="milestone"><span>01</span><div><strong>First lesson</strong><small>Complete any learning activity</small></div><b id="milestoneOne">○</b></div><div class="milestone"><span>02</span><div><strong>Curious explorer</strong><small>Complete 3 lessons</small></div><b id="milestoneThree">○</b></div><div class="milestone"><span>03</span><div><strong>Knowledge builder</strong><small>Complete 5 lessons</small></div><b id="milestoneFive">○</b></div></article>
+      </div>
+    </section>
+
+    <section class="page" id="library">
+      <div class="page-intro"><span class="tag">A SHELF FOR CURIOUS MINDS</span><h1>Resource library.</h1><p>Explore useful starting points and learning resources for your next topic.</p></div>
+      <div class="resource-grid">
+        <article class="resource-card"><div class="resource-art art-quantum">⟡</div><span class="course-type">QUANTUM COMPUTING</span><h2>Quantum Computing for Everyone</h2><p>Build intuition for qubits, quantum gates and the basics of quantum information.</p><a href="https://learning.quantum.ibm.com/" target="_blank" rel="noopener">Explore IBM Quantum Learning ↗</a></article>
+        <article class="resource-card"><div class="resource-art art-python">⌘</div><span class="course-type">PROGRAMMING</span><h2>Python documentation</h2><p>Use the official documentation as a reference while learning Python.</p><a href="https://docs.python.org/3/tutorial/" target="_blank" rel="noopener">Open Python tutorial ↗</a></article>
+        <article class="resource-card"><div class="resource-art art-ai">✳</div><span class="course-type">ARTIFICIAL INTELLIGENCE</span><h2>Machine learning basics</h2><p>Learn core ML concepts, models, evaluation and responsible practice.</p><a href="https://developers.google.com/machine-learning/crash-course" target="_blank" rel="noopener">Open ML Crash Course ↗</a></article>
+        <article class="resource-card"><div class="resource-art art-career">✧</div><span class="course-type">CAREER SKILLS</span><h2>Build your learning habits</h2><p>Use short study sessions, reflection and practice to build consistency.</p><button class="text-btn" data-goto="assistant">Plan with AI Companion ↗</button></article>
+      </div>
+    </section>
+
+    <section class="page" id="assistant">
+      <div class="page-intro"><span class="tag">YOUR STUDY PARTNER</span><h1>Meet your AI companion.</h1><p>Ask questions, request study plans or get help choosing what to learn next.</p></div>
+      <div class="chat-panel panel">
+        <div class="chat-header"><div class="avatar assistant-avatar">✳</div><div><strong>Forge Companion</strong><small><span class="online-dot"></span> Learning assistant demo</small></div><button class="text-btn" id="clearChat">Clear chat</button></div>
+        <div class="chat-messages" id="chatMessages"><div class="message bot-message"><strong>Forge Companion</strong><p>Hey there! ✨ I'm here to help you learn. Ask me about quantum computing, Python, study planning or career skills.</p></div></div>
+        <div class="suggestion-chips"><button data-prompt="Explain quantum computing in simple words">Explain quantum computing</button><button data-prompt="Make me a 7-day study plan">Create a study plan</button><button data-prompt="Give me a beginner Python exercise">Python practice</button></div>
+        <form id="chatForm" class="chat-input-row"><input id="chatInput" placeholder="Ask something or tell me your learning goal..." autocomplete="off" required><button class="primary-btn" type="submit">Send ↗</button></form>
+        <p class="footnote">This is a rule-based demo assistant. For genuine AI-generated answers, connect a backend to an AI service; never put private API keys in frontend code.</p>
+      </div>
+    </section>
+
+    <section class="page" id="settings">
+      <div class="page-intro"><span class="tag">MAKE IT YOURS</span><h1>Your settings.</h1><p>Personalise your learning space and language preference.</p></div>
+      <div class="panel settings-panel">
+        <h2>Learning profile</h2>
+        <label class="field-label" for="nameInput">What should we call you?</label><input id="nameInput" placeholder="Enter your name" maxlength="40">
+        <label class="field-label" for="languageSelect">Dashboard greeting language</label><select id="languageSelect"><option value="en">English</option><option value="ta">தமிழ் (Tamil)</option><option value="hi">हिन्दी (Hindi)</option></select>
+        <button class="primary-btn" id="saveSettings">Save preferences</button><p id="settingsFeedback" class="feedback"></p>
+        <hr><h2>Your data</h2><p class="muted">Your demo progress and preferences are stored in this browser using localStorage.</p><button class="outline-btn danger-btn" id="resetData">Reset all demo progress</button>
+      </div>
+    </section>
+
+    <footer class="footer"><span>QuantumForge © 2026</span><span>Curiosity is your superpower. <b>✦</b></span></footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
